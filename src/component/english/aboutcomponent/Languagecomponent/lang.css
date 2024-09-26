@@ -1,0 +1,141 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700');
+
+/* Set perspective on card container */
+.card--container {
+  perspective: 1000px;
+  height: 200px;
+  width: 150px;
+  cursor: pointer;
+  margin: 1rem;
+  min-height: 80vh;
+}
+
+/* Add state for when card is clicked */
+.card--container.flip .card--flipper {
+  transform: rotateY(180deg);
+}
+
+/* Hover Effects */
+.card--container:hover {
+  /*transform: scale(1.1);*/
+}
+
+.card--container:hover .side {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card--container:hover i {
+  animation-play-state: running;
+}
+
+/* Flipping container */
+.card--flipper {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+}
+
+/* Card Styles */
+.side {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:fit-content;
+  width: fit-content;
+  border-radius: 5%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* LINK */
+.side h2 {
+  color: rgb(20, 1, 14);
+  
+}
+
+/* ICON 
+.side i {
+  animation: 0.5s rock infinite linear;
+  animation-play-state: paused;
+  margin-top: 0.5em;
+  background-color: #fff;
+  padding: 0.3em;
+  border-radius: 40% 40% 0 40%;
+  font-size: 4em;
+}*/
+
+/* TEXT */
+.side p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  
+  color: rgb(251, 16, 16);
+}
+
+/* SIDE A */
+.side--a {
+  background-image: linear-gradient(135deg, #701365, hsla(65, 79%, 74%, 0.885));  
+  border: 3px solid #16010e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #1e0119;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.side--a a {
+  color: #1b0115;
+  border-top: 3px solid #330122; /* lighten(#50ABF1, 10%) equivalent */
+}
+
+/* SIDE B */
+.side--b {
+  background-image: linear-gradient(135deg, #f1982b, hsl(86, 79%, 74%));
+  border: 2px solid #550202;
+  transform: rotateY(180deg) translatex(150%);
+  width: 700px;
+  height: 500px;
+  overflow: auto;
+}
+
+.side--b i {
+  border-radius: 40% 40% 40% 0;
+}
+
+.side--b h3 {
+  color: #0e0453;
+  text-align: center;
+ 
+}
+
+/* Rocking animation */
+@keyframes rock {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(10deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+/* BASE STYLES */
+body {
+  background-color: #fff;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
